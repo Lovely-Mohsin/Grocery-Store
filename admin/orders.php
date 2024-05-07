@@ -9,7 +9,7 @@ require_once "./includes/helpers.php";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Profile - Ogani</title>
+    <title>Orders - Ogani</title>
 
     <!-- css-links include -->
     <?php require_once("./includes/css-links.php") ?>
@@ -69,34 +69,43 @@ require_once "./includes/helpers.php";
                             </div>
                         </div>  
                     </div>
-                    <div class="col-lg-7 col-xl-8">
-                        <div class="card">
+                <div class="col-lg-7">
+                            <!-- Show Data in table -->
                             <div class="card-body">
-                                <form action="#" class="form-profile">
-                                    <div class="form-group">
-                                        <textarea class="form-control" name="textarea" id="textarea" cols="30" rows="2" placeholder="Post a new message"></textarea>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <ul class="mb-0 form-profile__icons">
-                                            <li class="d-inline-block">
-                                                <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-user"></i></button>
-                                            </li>
-                                            <li class="d-inline-block">
-                                                <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-paper-plane"></i></button>
-                                            </li>
-                                            <li class="d-inline-block">
-                                                <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-camera"></i></button>
-                                            </li>
-                                            <li class="d-inline-block">
-                                                <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-smile"></i></button>
-                                            </li>
-                                        </ul>
-                                        <button class="btn btn-success px-3 ml-4">Send</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                                <h3>View All Orders</h3>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-success table-bordered zero-configuration">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Office</th>
+                                                <th>Age</th>
+                                                <th>Start date</th>
+                                                <th>Salary</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Herrod Chandler</td>
+                                                <td>Sales Assistant</td>
+                                                <td>San Francisco</td>
+                                                <td>59</td>
+                                                <td>2012/08/06</td>
+                                                <td>$137,500</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rhona Davidson</td>
+                                                <td>Integration Specialist</td>
+                                                <td>Tokyo</td>
+                                                <td>55</td>
+                                                <td>2010/10/14</td>
+                                                <td>$327,900</td>
+                                            </tr>
+                                        </tbody>
 
+                                    </table>
+                            </div>        
                     </div>
                 </div>
             </div>

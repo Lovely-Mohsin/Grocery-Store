@@ -33,7 +33,7 @@
 
 
                     <li>
-                        <a href="#" aria-expanded="false">
+                        <a href="./orders.php" aria-expanded="false">
                         <i class="fa-solid fa-cart-shopping text-success"></i> <span class="nav-text"> Orders</span>
                         </a>
                     </li>

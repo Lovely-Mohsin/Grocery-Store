@@ -1,5 +1,4 @@
 <?php
-
  session_start();
 ?>
 <!DOCTYPE html>
@@ -98,7 +97,7 @@
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-success text-white dropdown-toggle" data-toggle="dropdown">Actions</button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="./edit-products.php?id=<?=$id?>">Edit</a>
                                         <a class="dropdown-item" href="./delete-products.php?id=<?=$id?>">Delete</a>
                                     </div>
                                 </div>

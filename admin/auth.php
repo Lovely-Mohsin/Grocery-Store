@@ -25,4 +25,5 @@ else {
     $_SESSION['user_image'] = $row['image'];
 }
 
+
 ?>

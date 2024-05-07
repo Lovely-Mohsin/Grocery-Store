@@ -24,9 +24,6 @@
 
     <div class="content-body p-3">
 
-
-
-
         <!-- view categories container -->
         <div class="container mt-3 bg-white p-4">
             <div class="row">
@@ -85,7 +82,7 @@
                                         <div class="dropdown">
                                             <button type="button" class="btn btn-danger text-white dropdown-toggle" data-toggle="dropdown">Actions</button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="">Edit</a>
+                                                <a class="dropdown-item" href="./edit-customer.php?id=<?=$id?>">Edit</a>
                                                 <a class="dropdown-item" href="./delete-customer.php?id=<?=$id?>">Delete</a>
                                             </div>
                                         </div>
