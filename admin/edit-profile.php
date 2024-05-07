@@ -1,4 +1,21 @@
-<?php session_start(); ?>
+<?php
+
+require_once("./db-con.php");
+require_once("./auth.php");
+
+$user_id = $_GET['id'];
+echo "$user_id";
+exit;
+if (!empty($user_id)) {
+    $query = "SELECT * FROM users WHERE id = '$user_id'";
+    $result = mysqli_query($con, $query);
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+    }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +24,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Add User</title>
+    <title>Edit User</title>
 
     <!-- css-links include -->
     <?php require_once("./includes/css-links.php") ?>
@@ -27,7 +44,7 @@
         <div class="container mt-3 bg-white p-4">
         <div class="row">
             <div class="col-md-4">
-            <h3> <i class="fa fa-plus text-success"></i> Add User</h3>
+            <h3> <i class="fa fa-edit text-success"></i> Edit User</h3>
             </div>
             <div class="col-md-8">
             <?php
@@ -48,18 +65,19 @@
             </div>
 
             <div class="form-container">
-                <form action="./add-user-qry.php" method="POST" enctype="multipart/form-data" class="row">
+                <form action="./update-profile.php" method="POST" enctype="multipart/form-data" class="row">
+                <input type="hidden" value="<?= $row['id'] ?>" name="id">
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="name">Name <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter here..." required>
+                        <input type="text" class="form-control" id="name" value="<?= $row['name'] ?>" name="name" placeholder="Enter here..." required>
                     </div>
 
 
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="email">Email <span class="text-danger">*</span>
                         </label>
-                        <input type="email" class="form-control"  name="email" placeholder="Enter here..." required>
+                        <input type="email" class="form-control" value="<?= $row['email'] ?>" name="email" placeholder="Enter here..." required>
                     </div>
 
 
@@ -67,7 +85,7 @@
                     <div class="col-lg-4 ">
                         <label class="form-label" >Mobile No <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" name="mobile" placeholder="Enter here..." required>
+                        <input type="text" class="form-control" value="<?= $row['mobile'] ?>" name="mobile" placeholder="Enter here..." required>
                     </div>
 
 
@@ -96,7 +114,7 @@
                     <div class="offset-8 col-lg-4 mb-2">
                         <label for=""></label>
 
-                        <button class="btn btn-success text-white btn-lg mt-2 w-100"> <i class="fa fa-plus"></i> Add User</button>
+                        <button class="btn btn-success text-white btn-lg mt-2 w-100"> <i class="fa fa-edit"></i> Update User</button>
                     </div>
 
                 </form>

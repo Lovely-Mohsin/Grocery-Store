@@ -63,7 +63,7 @@ require_once "./includes/helpers.php";
                                 </ul>
                                 <div class="row my-2">
                                 <div class="col-12 text-center">
-                                    <button class="btn btn-danger mt-2 px-5">Edit Profile <i class="fa fa-edit"></i></button>
+                                    <a href="./edit-profile.php"><button class="btn btn-danger mt-2 px-5">Edit Profile <i class="fa fa-edit"></i></button></a>
                                 </div>
                             </div>
                             </div>
