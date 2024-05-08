@@ -15,7 +15,7 @@ else {
     $result = mysqli_query($con, $sel_qry);
     
     $row  = mysqli_fetch_assoc($result);
-    
+    $_SESSION['user_id'] = $row['id'];
     $_SESSION['user_name'] = $row['name'];
     $_SESSION['user_email'] = $row['email'];
     $_SESSION['user_mobile'] = $row['mobile'];
@@ -23,6 +23,7 @@ else {
     $_SESSION['user_role'] = $row['role'];
     $_SESSION['user_description'] = $row['description'];
     $_SESSION['user_image'] = $row['image'];
+
 }
 
 

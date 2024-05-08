@@ -51,6 +51,7 @@ require_once "./includes/helpers.php";
                                     <img class="mx-auto mb-3 rounded rounded-circle" src="./images/user/<?= $_SESSION['user_image']?>" width="100" height="100" alt="">
                                     </div>
                                     <div class="media-body">
+                                        <input type="hidden" name="id" value="<?= $row['id'] ?>" id="">
                                         <h3 class="mb-0"><?= $_SESSION['user_name']?></h3>
                                     </div>
                                 </div>
@@ -63,7 +64,7 @@ require_once "./includes/helpers.php";
                                 </ul>
                                 <div class="row my-2">
                                 <div class="col-12 text-center">
-                                    <a href="./edit-profile.php"><button class="btn btn-danger mt-2 px-5">Edit Profile <i class="fa fa-edit"></i></button></a>
+                                    <a href="./edit-profile.php<?php $_SESSION['user_id']?>"><button class="btn btn-danger mt-2 px-5">Edit Profile <i class="fa fa-edit"></i></button></a>
                                 </div>
                             </div>
                             </div>

@@ -3,10 +3,9 @@
 require_once("./db-con.php");
 require_once("./auth.php");
 
-$user_id = $_GET['id'];
-echo "$user_id";
-exit;
+$user_id = $_SESSION['user_id'];
 if (!empty($user_id)) {
+
     $query = "SELECT * FROM users WHERE id = '$user_id'";
     $result = mysqli_query($con, $query);
 
@@ -92,22 +91,23 @@ if (!empty($user_id)) {
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="image">Image <span class="text-danger">*</span>
                         </label>
-                        <input type="file" class="form-control" id="image" name="image" placeholder="Enter here..." required>
+                    <input type="file" class="form-control" id="userimage" name="new_image" accept="image/*">
+                    <input type="hidden" class="form-control" value="<?= $row['image'] ?>" id="userimage" name="old_image" accept="image/*" required>
                     </div>
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="val-username">Password <span class="text-danger">*</span>
                         </label>
-                        <input type="password" class="form-control" name="password" placeholder="Enter here..." required>
+                        <input type="password" class="form-control" name="password" value="<?= $row['password'] ?>" readonly placeholder="Enter here..." required>
                     </div>
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="val-username">Address <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" name="address" placeholder="Enter here..." required>
+                        <input type="text" class="form-control" name="address" value="<?= $row['address'] ?>" placeholder="Enter here..." required>
                     </div>
                     <div class="col-lg-12 mb-2">
                         <label class="form-label" for="val-username">Description <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" name="description" placeholder="Enter here..." required>
+                        <input type="text" class="form-control" name="description" value="<?= $row['description'] ?>" placeholder="Enter here..." required>
                     </div>
 
 
