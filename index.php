@@ -86,7 +86,7 @@ include_once "./db-con.php";
                             <?php while ($ct = mysqli_fetch_assoc($cats)) { ?>
                                 <li data-filter=".<?=$ct['category']?>"><?php echo $ct['category']?></li>
                             <?php }
-                            //mysql_data_seek($result_work_id, 0);
+                            mysqli_data_seek($cats, 0);
                             ?>
                             <!-- <li data-filter=".oranges">Oranges</li>
                             <li data-filter=".fresh-meat">Fresh Meat</li>
@@ -98,7 +98,7 @@ include_once "./db-con.php";
             </div>
             <div class="row featured__filter">
             <?php while($pt = mysqli_fetch_assoc($products)) { ?>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mix <?php $ptc = getCategroyById($con,$pt['category_id']); echo $ptc['category'] ?>  fresh-meat">
+                        <div class="col-lg-3 col-md-4 col-sm-6 mix <?php $ptc = getCategroyById($con,$pt['category_id']); echo $ptc['category'] ?> ">
                             <div class="featured__item">
                                 <div class="featured__item__pic set-bg" data-setbg="<?php echo getImageUrl("product", $pt['image']) ?>">
                                     <ul class="featured__item__pic__hover">

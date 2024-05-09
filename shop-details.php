@@ -49,8 +49,8 @@ include_once "./db-con.php";
                     <div class="breadcrumb__text">
                         <h2><?php echo $product['name']?></h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <a href="./index.html"><?php echo $cat_id['category']?></a>
+                            <a href="./index.php">Home</a>
+                            <a href="./index.php"><?php echo $cat_id['category']?></a>
                             <span><?php echo $product['name']?></span>
                         </div>
                     </div>
