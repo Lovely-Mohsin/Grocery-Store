@@ -95,14 +95,15 @@ include_once "./db-con.php";
                         </div>
                         <div class="product__details__price">$<?php echo $product['unit_price']?>:00</div>
                         <p><?php echo $product['description']?></p>
+                        <div class="alert alert-success" style="display: none" ; id="message">Added To the Add To Cart.</div>
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
-                                    <input type="text" value="1">
+                                    <input type="text" value="1" id="product-qty">
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="primary-btn">ADD TO CARD</a>
+                        <a href="#" class="primary-btn" id="AddToCart">ADD TO CARD</a>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
                             <li><b>Availability</b> <span><?php echo $product['quantity']?></span></li>
@@ -269,6 +270,30 @@ include_once "./db-con.php";
     <!-- javascript links include -->
     <?php require_once("./includes/javascript-links.php") ?>
 
+
+    <script>
+    $(document).ready(function () {
+        $("#AddToCart").on("click", function (e){
+            e.preventDefault();
+            let pid = "<?php echo $pid ?>";
+            let qty = $("#product-qty").val();
+            $.ajax({
+                url: "add-to-cart.php",
+                type: "POST",
+                data: {pid, qty},
+                success: function (response) {
+                    console.log(response)
+                    $("#message").html(response).show();
+                        setTimeout(() => {
+                            $("#message").hide();
+                        }, 3000)
+
+                }
+            })
+
+        })
+    })
+</script>
 
 </body>
 
