@@ -85,17 +85,11 @@
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
-                                <div>English</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#"></a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
+                            <a href='./admin/login.php' class="text-dark"><i class='fa fa-user'></i> Admin Login</a>
+
                             </div>
                             <div class="header__top__right__auth">
                                 <a href="./login.php"><i class="fa fa-user"></i> Login</a>
-                                <a href='./admin/login.php'><i class='fa fa-user'></i> Admin Login</a>
                             </div>
                         </div>
                     </div>
@@ -133,7 +127,9 @@
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                        <div class="header__cart__price">
+                        <a href="./customer_profile.php" class="text-dark"><h6> <i class="fa fa-user"></i> My Account</h6></a>
+                        </div>
                     </div>
                 </div>
             </div>
