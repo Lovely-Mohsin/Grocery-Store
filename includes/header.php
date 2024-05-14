@@ -125,7 +125,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span id="cartItemsCountDesk">0</span></a></li>
                         </ul>
                         <div class="header__cart__price">
                         <a href="./customer_profile.php" class="text-dark"><h6> <i class="fa fa-user"></i> My Account</h6></a>

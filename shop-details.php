@@ -282,11 +282,14 @@ include_once "./db-con.php";
                 type: "POST",
                 data: {pid, qty},
                 success: function (response) {
-                    console.log(response)
-                    $("#message").html(response).show();
-                        setTimeout(() => {
-                            $("#message").hide();
-                        }, 3000)
+                    $("#cartItemsCountDesk").html(response);
+                        Swal.fire({
+                        position: "top-center",
+                        icon: "success",
+                        title: "Item successfully added to cart",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
 
                 }
             })
